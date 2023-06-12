@@ -3,9 +3,9 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import Alert from "./components/Alert";
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import About from "./components/About";
-// import Home from "./components/Home";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import About from "./components/About";
+import Home from "./components/Home";
 import { useState } from "react";
 
 function App() {
@@ -26,38 +26,38 @@ function App() {
       setMode("dark");
       document.body.style.backgroundColor = "#223664";
       showAlert("Darkmode has been enabled!", "success");
-      document.title = "TextUtils - LightMode";
+      document.title = "TextUtils - DarkMode";
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
       showAlert("Lightmode has been enabled!", "success");
-      document.title = "TextUtils - DarkMode";
+      document.title = "TextUtils - LightMode";
     }
   };
 
   return (
     <>
-      {/* <BrowserRouter> */}
+      <BrowserRouter>
         <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
 
         <div className="container my-3">
-          {/* <Routes>
+          <Routes>
             <Route path="/about" element={<About />} />
-            <Route path="/home" element={<Home />} /> */}
-            {/* <Route
+            <Route path="/home" element={<Home />} />
+            <Route
               path="/"
-              element={ */}
+              element={
                 <TextForm
                   heading="Enter the text to analyze below"
                   showAlert={showAlert}
                   mode={mode}
                 />
-              {/* } */}
-            {/* />
-          </Routes> */}
+              }
+            />
+          </Routes>
         </div>
-      {/* </BrowserRouter> */}
+      </BrowserRouter>
     </>
   );
 }

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div>
+    <div style={{color: "white"}}>
       <h1>Coming Soon !</h1>
     </div>
   )
